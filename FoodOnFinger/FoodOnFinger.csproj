@@ -176,6 +176,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CuisinesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\Order_DetailsController.cs" />
@@ -260,6 +261,11 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Cuisines\Create.cshtml" />
+    <Content Include="Views\Cuisines\Delete.cshtml" />
+    <Content Include="Views\Cuisines\Details.cshtml" />
+    <Content Include="Views\Cuisines\Edit.cshtml" />
+    <Content Include="Views\Cuisines\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
