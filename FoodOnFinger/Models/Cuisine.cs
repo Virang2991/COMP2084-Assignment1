@@ -16,7 +16,6 @@ namespace FoodOnFinger.Models
             Products = new HashSet<Product>();
         }
 
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CuisineID { get; set; }
 
         [StringLength(50)]

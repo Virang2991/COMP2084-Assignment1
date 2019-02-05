@@ -8,7 +8,7 @@ namespace FoodOnFinger.Models
     public partial class ProductView : DbContext
     {
         public ProductView()
-            : base("name=ProductView")
+            : base("name=ProductView1")
         {
         }
 

@@ -9,7 +9,6 @@ namespace FoodOnFinger.Models
     public partial class Order_Details
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int OrderID { get; set; }
 
         public int? CuisineID { get; set; }
