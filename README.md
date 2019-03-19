@@ -6,4 +6,8 @@ I have used the bootstrap theme from https://bootswatch.com/3/simplex/ for CSS.
 I have created Model View Controller.
 I have commited on github.
 In addition I have created Azure Link and also created database on Azure Server and connected the database with my project and performed all CRUD operations.
-
+The user name displayed when he logs in.
+Views for create, edit, delete made authenticated. If user logs in he/she can see the order page. 
+Anonymous cannot see the links for create, edit and delete.
+Google API added.
+Microsoft API added.
