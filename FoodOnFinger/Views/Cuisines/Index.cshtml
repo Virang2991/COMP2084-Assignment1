@@ -5,10 +5,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Cuisine</h2>
 
 <p>
+    @if (User.IsInRole("Administrator"))
+    {
     @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -31,8 +34,8 @@
         </td>
         <td>
            
-            @Html.ActionLink("Details", "Details", new { id=item.CuisineID }) |
-                   </td>
+            @Html.ActionLink("Details", "Details", new { id=item.CuisineID }) 
+        </td>
     </tr>
 }
 

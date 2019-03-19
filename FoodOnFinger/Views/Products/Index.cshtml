@@ -5,10 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h2>Product Details</h2>
+
 
 <p>
+    @if (Request.IsAuthenticated)
+    {
     @Html.ActionLink("Create New", "Create")
+    }
 </p>
 <table class="table">
     <tr>
@@ -42,9 +46,9 @@
             @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            
-            @Html.ActionLink("Details", "Details", new { id=item.ProductID }) |
-                    </td>
+
+            @Html.ActionLink("Details", "Details", new { id = item.ProductID })
+        </td>
     </tr>
 }
 
