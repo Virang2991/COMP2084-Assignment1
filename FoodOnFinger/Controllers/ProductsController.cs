@@ -37,7 +37,7 @@ namespace FoodOnFinger.Controllers
         public ActionResult Index()
         {
             var products = db.Products.Include(p => p.Cuisine);
-            return View(products.ToList());
+            return View("Index", products.ToList());
         }
 
         // GET: Products/Details/5
