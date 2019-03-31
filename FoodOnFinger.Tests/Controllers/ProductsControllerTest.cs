@@ -9,6 +9,7 @@ namespace FoodOnFinger.Tests.Controllers
         [TestMethod]
         public void TestMethod1()
         {
+
         }
     }
 }

@@ -12,7 +12,26 @@ namespace FoodOnFinger.Controllers
 {
     public class ProductsController : Controller
     {
-        private ProductView db = new ProductView();
+        //private ProductView db = new ProductView();
+        IMockProducts db;
+
+        //Const
+
+        public ProductsController()
+
+        {
+
+            this.db = new IDataProducts();
+
+        }
+
+        public ProductsController(IMockProducts mockdb)
+
+        {
+
+            this.db = mockdb;
+
+        }
 
         // GET: Products
         public ActionResult Index()
@@ -28,7 +47,7 @@ namespace FoodOnFinger.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(m => m.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -52,8 +71,7 @@ namespace FoodOnFinger.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Products.Add(product);
-                db.SaveChanges();
+                db.Save(product);
                 return RedirectToAction("Index");
             }
 
@@ -68,7 +86,7 @@ namespace FoodOnFinger.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(m => m.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -86,8 +104,7 @@ namespace FoodOnFinger.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(product).State = EntityState.Modified;
-                db.SaveChanges();
+                db.Save(product);
                 return RedirectToAction("Index");
             }
             ViewBag.CuisineID = new SelectList(db.Cuisines, "CuisineID", "Name", product.CuisineID);
@@ -101,7 +118,7 @@ namespace FoodOnFinger.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            Product product = db.Products.SingleOrDefault(m => m.ProductID == id);
             if (product == null)
             {
                 return HttpNotFound();
@@ -114,9 +131,8 @@ namespace FoodOnFinger.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Product product = db.Products.Find(id);
-            db.Products.Remove(product);
-            db.SaveChanges();
+            Product product = db.Products.SingleOrDefault(m => m.ProductID == id);
+            db.Delete(product);
             return RedirectToAction("Index");
         }
 
