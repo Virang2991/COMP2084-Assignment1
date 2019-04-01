@@ -52,14 +52,14 @@ namespace FoodOnFinger.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View("Details",product);
         }
 
         // GET: Products/Create
         public ActionResult Create()
         {
             ViewBag.CuisineID = new SelectList(db.Cuisines, "CuisineID", "Name");
-            return View();
+            return View("Create");
         }
 
         // POST: Products/Create
@@ -76,7 +76,7 @@ namespace FoodOnFinger.Controllers
             }
 
             ViewBag.CuisineID = new SelectList(db.Cuisines, "CuisineID", "Name", product.CuisineID);
-            return View(product);
+            return View("Create",product);
         }
 
         // GET: Products/Edit/5
