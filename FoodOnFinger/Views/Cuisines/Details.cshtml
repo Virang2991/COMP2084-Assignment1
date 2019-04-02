@@ -30,7 +30,7 @@
     </dl>
 </div>
 <p>
-    @(Request.IsAuthenticated)
+    @if(Request.IsAuthenticated)
     {
         @Html.ActionLink("Edit", "Edit", new { id = Model.CuisineID })
     }

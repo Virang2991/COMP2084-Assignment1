@@ -39,13 +39,13 @@
 
         @if (Request.IsAuthenticated)
         {
-        <td>
-            @Html.ActionLink("Edit ", "Edit", new { id = item.CuisineID }) |
+            <td>
+                @Html.ActionLink("Edit ", "Edit", new { id = item.CuisineID }) |
 
-            @Html.ActionLink("Delete ", "Delete", new { id = item.CuisineID }) |
-        </td>
+                @Html.ActionLink("Delete ", "Delete", new { id = item.CuisineID }) |
+            </td>
         }
-        <td>    @Html.ActionLink("Details", "Details", new { id = item.CuisineID })</td>
+       | @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
             
            
         </tr>
