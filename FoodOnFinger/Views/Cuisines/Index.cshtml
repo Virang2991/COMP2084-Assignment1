@@ -39,8 +39,8 @@
             <td>
                 @if (Request.IsAuthenticated)
                 {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) |
-@Html.ActionLink("Details", "Details", new { id = item.CuisineID }) |
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) 
+                    @Html.ActionLink("Details", "Details", new { id = item.CuisineID }) 
                 }
                 @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
             </td>
