@@ -29,21 +29,25 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @if (Request.IsAuthenticated)
-                {
-                    @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) 
-                    @Html.ActionLink("Details", "Details", new { id = item.CuisineID }) 
-                }
-                @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
-            </td>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+
+        @if (Request.IsAuthenticated)
+        {
+        <td>
+            @Html.ActionLink("Edit ", "Edit", new { id = item.CuisineID }) |
+
+            @Html.ActionLink("Delete ", "Delete", new { id = item.CuisineID }) |
+        </td>
+        }
+        <td>    @Html.ActionLink("Details", "Details", new { id = item.CuisineID })</td>
+            
+           
         </tr>
     }
 
