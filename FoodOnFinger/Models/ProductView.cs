@@ -5,9 +5,9 @@ namespace FoodOnFinger.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
-    public partial class ProductView1 : DbContext
+    public partial class ProductView : DbContext
     {
-        public ProductView1()
+        public ProductView()
             : base("name=ProductView1")
         {
         }

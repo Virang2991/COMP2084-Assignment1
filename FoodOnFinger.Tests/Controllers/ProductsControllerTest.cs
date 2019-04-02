@@ -161,7 +161,7 @@ namespace FoodOnFinger.Tests.Controllers
         }
 
         [TestMethod]
-        public void CreteValidModel()
+        public void CreateValidModel()
         {
             pc.ModelState.AddModelError("Description", "error");
             // Act
@@ -171,7 +171,7 @@ namespace FoodOnFinger.Tests.Controllers
             Assert.AreEqual("Create", result.ViewName);          
         }
         [TestMethod]
-        public void CretePostRedirect()
+        public void CreatePostRedirect()
         {
             RedirectToRouteResult result = pc.Create(products[0]) as RedirectToRouteResult;
 
@@ -179,7 +179,7 @@ namespace FoodOnFinger.Tests.Controllers
         }
 
         [TestMethod]
-        public void CretePostSelectList()
+        public void CreatePostSelectList()
         {
             pc.ModelState.AddModelError("Description", "error");
             SelectList result = ((ViewResult)pc.Create(new Product { ProductID = 3, CuisineID = 0 })).ViewBag.CuisineID;
