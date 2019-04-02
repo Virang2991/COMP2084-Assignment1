@@ -33,8 +33,12 @@
             @Html.DisplayFor(modelItem => item.Description)
         </td>
         <td>
-           
-            @Html.ActionLink("Details", "Details", new { id=item.CuisineID }) 
+            @if (Request.IsAuthenticated)
+            {
+                @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.CuisineID }) |
+            }
+            @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
         </td>
     </tr>
 }
