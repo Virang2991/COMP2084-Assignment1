@@ -42,13 +42,22 @@ namespace FoodOnFinger.Tests.Controllers
 
             moq.Setup(p => p.Products).Returns(products.AsQueryable());
             
-            pc = new ProductsController(moq.Object);
-            
+            pc = new ProductsController(moq.Object);        
            
            
 
         }
 
+        [TestMethod]
+        public void ProductMain()
+        {
+            ProductsController p1 = new ProductsController();
+
+            var data = p1.GetType();
+
+            Assert.IsInstanceOfType(data, typeof(object));
+        }
+        
         [TestMethod]
         public void IndexViewName()
         {
@@ -188,6 +197,16 @@ namespace FoodOnFinger.Tests.Controllers
         }
         
         [TestMethod]
+        public void EditLoad()
+        {
+            //Act
+            ViewResult result = pc.Edit(1) as ViewResult;
+
+            //Assert
+            Assert.IsNotNull(result);
+        }
+
+        [TestMethod]
         public void EditValidModel()
         {
             pc.ModelState.AddModelError("Description", "error");
@@ -227,11 +246,23 @@ namespace FoodOnFinger.Tests.Controllers
         {
             //Act
 
-            HttpStatusCodeResult result = pc.Edit(25) as HttpStatusCodeResult;
+            HttpNotFoundResult result = pc.Edit(25) as HttpNotFoundResult;
 
             //Assert
 
             Assert.AreEqual(404, result.StatusCode);
+
+        }
+        [TestMethod]
+        public void EditViewBadRequest()
+        {
+            //Act
+
+            HttpStatusCodeResult result = pc.Edit((int?)null) as HttpStatusCodeResult;
+
+            //Assert
+
+            Assert.AreEqual(400, result.StatusCode);
 
         }
 
