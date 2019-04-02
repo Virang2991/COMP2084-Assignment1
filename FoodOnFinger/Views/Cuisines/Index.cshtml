@@ -7,12 +7,15 @@
 
 <h2>Cuisine</h2>
 
-<p>
-    @if (User.IsInRole("Administrator"))
-    {
-    @Html.ActionLink("Create New", "Create")
-    }
-</p>
+
+@if (Request.IsAuthenticated)
+
+{
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -24,23 +27,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Description)
-        </td>
-        <td>
-            @if (Request.IsAuthenticated)
-            {
-                @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.CuisineID }) |
-            }
-            @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @if (Request.IsAuthenticated)
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CuisineID }) |
+@Html.ActionLink("Details", "Details", new { id = item.CuisineID }) |
+                }
+                @Html.ActionLink("Details", "Details", new { id = item.CuisineID })
+            </td>
+        </tr>
+    }
 
 </table>
