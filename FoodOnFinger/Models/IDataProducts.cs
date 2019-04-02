@@ -9,7 +9,8 @@ namespace FoodOnFinger.Models
     {
         //db connection
 
-        private ProductView db = new ProductView();
+        private ProductView1 db = new ProductView1();
+       // private ProductView1 db = new ProductView();
                
         public IQueryable<Product> Products { get { return db.Products; } }
         

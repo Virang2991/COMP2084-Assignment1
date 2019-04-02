@@ -92,7 +92,7 @@ namespace FoodOnFinger.Controllers
                 return HttpNotFound();
             }
             ViewBag.CuisineID = new SelectList(db.Cuisines, "CuisineID", "Name", product.CuisineID);
-            return View(product);
+            return View("Edit", product);
         }
 
         // POST: Products/Edit/5
@@ -108,7 +108,7 @@ namespace FoodOnFinger.Controllers
                 return RedirectToAction("Index");
             }
             ViewBag.CuisineID = new SelectList(db.Cuisines, "CuisineID", "Name", product.CuisineID);
-            return View(product);
+            return View("Edit", product);
         }
 
         // GET: Products/Delete/5
@@ -123,7 +123,7 @@ namespace FoodOnFinger.Controllers
             {
                 return HttpNotFound();
             }
-            return View(product);
+            return View("Delete", product);
         }
 
         // POST: Products/Delete/5
@@ -136,13 +136,13 @@ namespace FoodOnFinger.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+        //protected override void Dispose(bool disposing)
+        //{
+        //    if (disposing)
+        //    {
+        //        db.Dispose();
+        //    }
+        //    base.Dispose(disposing);
+        //}
     }
 }

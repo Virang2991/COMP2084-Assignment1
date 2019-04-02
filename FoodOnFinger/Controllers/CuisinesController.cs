@@ -12,7 +12,7 @@ namespace FoodOnFinger.Controllers
 {
     public class CuisinesController : Controller
     {
-        private ProductView db = new ProductView();
+        private ProductView1 db = new ProductView1();
 
         // GET: Cuisines
         public ActionResult Index()
