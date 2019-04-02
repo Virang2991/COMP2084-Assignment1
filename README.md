@@ -11,10 +11,10 @@ Views for create, edit, delete made authenticated. If user logs in he/she can se
 Anonymous cannot see the links for create, edit and delete.
 Google API added.
 Microsoft API added.
-<br/>
+
 Learn how to implement Unit test on your Application.
 Added Moq 
 Generated Unit test file for the Product Controller
 Got 100% Code Coverage for that Class
-
+ AzureLink: https://foodonfingers.azurewebsites.net/
 
