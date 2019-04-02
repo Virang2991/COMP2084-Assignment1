@@ -52,17 +52,13 @@
                 @if (Request.IsAuthenticated)
                 {
                     @Html.ActionLink("Edit", "Edit", new { id = item.ProductID })
-
+                    <div>|</div>
                     @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
                 }
 
                 |
                 @Html.ActionLink("Details", "Details", new { id = item.ProductID })
-            </td>
-           
-                    
-
-               
+            </td>       
         </tr>
 
         }
